@@ -21,6 +21,7 @@ class ActorsController < ApplicationController
     actor.name = params.fetch("query_name")
     actor.dob = params.fetch("query_dob")
     actor.bio = params.fetch("query_bio")
+    actor.image = params.fetch("query_image")
 
     actor.save
 
