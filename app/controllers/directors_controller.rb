@@ -38,14 +38,29 @@ class DirectorsController < ApplicationController
   end
 
   def new_director
-    dir = Director.new
+    director = Director.new
 
-    dir.name = params.fetch("query_name")
-    dir.dob = params.fetch("query_dob")
-    dir.bio = params.fetch("query_bio")
+    director.name = params.fetch("query_name")
+    director.dob = params.fetch("query_dob")
+    director.bio = params.fetch("query_bio")
 
-    dir.save
+    director.save
 
     redirect_to("/directors")
   end
+
+  def delete_director
+    the_id = params.fetch("path_id")
+    director = Director.find(the_id)
+
+    director.delete
+
+    redirect_to("/directors")
+  end
+
+  # def update_director
+  #   director = 
+
+  #   redirect_to("/directors")
+  # end
 end
