@@ -43,6 +43,7 @@ class DirectorsController < ApplicationController
     director.name = params.fetch("query_name")
     director.dob = params.fetch("query_dob")
     director.bio = params.fetch("query_bio")
+    director.image = params.fetch("query_image")
 
     director.save
 
@@ -65,9 +66,11 @@ class DirectorsController < ApplicationController
     updated_name = params.fetch("query_name")
     updated_dob = params.fetch("query_dob")
     updated_bio = params.fetch("query_bio")
+    updated_image = params.fetch("query_image")
 
-    director.update(name: updated_name, dob: updated_dob, bio: updated_bio)
+    director.update(name: updated_name, dob: updated_dob, bio: updated_bio,
+                    image: updated_image)
 
-    redirect_to("/directors")
+    redirect_to("/directors/#{the_id}")
   end
 end
