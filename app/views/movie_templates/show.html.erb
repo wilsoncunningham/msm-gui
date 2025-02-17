@@ -12,36 +12,53 @@
 
 <hr>
 
-<!--<form action="/update_movie/<%#= @the_movie.id %>" method="post">
+<form action="/update_movie/<%= @the_movie.id %>" method="post">
   <div>
-    <label for="name_box">
-      Name
+    <label for="title_box">
+      Title
     </label>
-    <input type="text" id="name_box" name="query_name" value="<%#= @the_movie.name %>">
+    <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>"%>>
   </div>
+
   <div>
-    <label for="dob_box">
-      Dob
+    <label for="year_box">
+      Year
     </label>
-    <input type="date" id="dob_box" name="query_dob" value="<%#= @the_movie.dob %>">
+    <input type="text" name="query_year" value="<%= @the_movie.year %>">
   </div>
+
   <div>
-    <label for="bio_box">
-      Bio
+    <label for="duration_box">
+      Duration
     </label>
-    <textarea id="bio_box" name="query_bio" rows="3">
-      <%#= @the_movie.bio %>-->
-<!--    </textarea>
+    <input type="text" name="query_duration" value="<%= @the_movie.duration %>">
   </div>
+
+  <div>
+    <label for="description_box">
+      Description
+    </label>
+    <textarea id="description_box" name="query_description" rows="3">
+      <%= @the_movie.description %>
+    </textarea>
+  </div>
+
   <div>
     <label for="image_box">
       Image
     </label>
-    <input type="text" id="image_box" name="query_image" value="<%#= @the_movie.image %>">
+    <input type="text" id="image_box" name="query_image" value="<%= @the_movie.image %>">
+  </div>
+
+  <div>
+    <label for="director_id_box">
+      Director ID
+    </label>
+    <input type="text" name="query_director_id" value="<%= @the_movie.director_id %>">
   </div>
 
   <button>Update movie</button>
-</form>-->
+</form>
 
 <hr>
 

@@ -39,18 +39,19 @@ class MoviesController < ApplicationController
     redirect_to("/movies")
   end
 
-  # def update_actor
-  #   the_id = params.fetch("path_id")
-  #   actor = Actor.find(the_id)
+  def update_movie
+    the_id = params.fetch("path_id")
+    movie = Movie.find(the_id)
 
-  #   updated_name = params.fetch("query_name")
-  #   updated_dob = params.fetch("query_dob")
-  #   updated_bio = params.fetch("query_bio")
-  #   updated_image = params.fetch("query_image")
+    updated_title = params.fetch("query_title")
+    updated_year = params.fetch("query_year")
+    updated_duration = params.fetch("query_duration")
+    updated_description = params.fetch("query_description")
+    updated_image = params.fetch("query_image")
+    updated_director_id = params.fetch("query_director_id")
 
-  #   actor.update(name: updated_name, dob: updated_dob, bio: updated_bio,
-  #                   image: updated_image)
+    movie.update(title: updated_title, year: updated_year, description: updated_description, duration: updated_duration, description: updated_description, image: updated_image, director_id: updated_director_id) 
 
-  #   redirect_to("/actors/#{the_id}")
-  # end
+    redirect_to("/movies/#{the_id}")
+  end
 end
