@@ -58,9 +58,16 @@ class DirectorsController < ApplicationController
     redirect_to("/directors")
   end
 
-  # def update_director
-  #   director = 
+  def update_director
+    the_id = params.fetch("path_id")
+    director = Director.find(the_id)
 
-  #   redirect_to("/directors")
-  # end
+    updated_name = params.fetch("query_name")
+    updated_dob = params.fetch("query_dob")
+    updated_bio = params.fetch("query_bio")
+
+    director.update(name: updated_name, dob: updated_dob, bio: updated_bio)
+
+    redirect_to("/directors")
+  end
 end
