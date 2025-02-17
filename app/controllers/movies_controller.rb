@@ -17,6 +17,8 @@ class MoviesController < ApplicationController
 
   def new_movie
     movie = Movie.new
+    puts "the new movie is #{movie}"
+    puts "making new movie"
 
     movie.title = params.fetch("query_title")
     movie.year = params.fetch("query_year")
@@ -24,6 +26,8 @@ class MoviesController < ApplicationController
     movie.description = params.fetch("query_description")
     movie.image = params.fetch("query_image")
     movie.director_id = params.fetch("query_director_id")
+    puts "attempting to save movie: #{movie.inspect}"
+    puts "Movie ID is: #{movie.id}"
 
     movie.save
 
