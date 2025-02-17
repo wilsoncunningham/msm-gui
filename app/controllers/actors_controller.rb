@@ -36,4 +36,18 @@ class ActorsController < ApplicationController
     redirect_to("/actors")
   end
 
+  def update_actor
+    the_id = params.fetch("path_id")
+    actor = Actor.find(the_id)
+
+    updated_name = params.fetch("query_name")
+    updated_dob = params.fetch("query_dob")
+    updated_bio = params.fetch("query_bio")
+    updated_image = params.fetch("query_image")
+
+    actor.update(name: updated_name, dob: updated_dob, bio: updated_bio,
+                    image: updated_image)
+
+    redirect_to("/actors/#{the_id}")
+  end
 end
