@@ -26,4 +26,14 @@ class ActorsController < ApplicationController
 
     redirect_to("/actors")
   end
+
+  def delete_actor
+    the_id = params.fetch("path_id")
+    actor = Actor.find(the_id)
+
+    actor.delete
+
+    redirect_to("/actors")
+  end
+
 end
